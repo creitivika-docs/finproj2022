@@ -1,0 +1,85 @@
+import time
+class Human:
+    def __init__(self, n, a, h):
+        self.name = n
+        self.age = a
+        self.hobby = h
+    def hello(self):
+        print("Здравствуйте, меня зовут", self.name, "мне", self.age, "лет. Моё хобби это", self.hobby)
+print("-Обучение - деловая встреча-")
+time.sleep(3)
+steve = Human("Стив", "14","Прогулка")
+alex = Human("Алекс", "20","Учёба")
+print("|||Сегодня у меня важная встреча")
+time.sleep(2)
+steve.hello()
+time.sleep(2)
+alex.hello()
+time.sleep(2)
+myname = input("|||А как же меня зовут?...")
+myage = input("|||А сколько мне лет?...")
+myhobby = input("|||А какое у меня хобби?...")
+me = Human(myname, myage, myhobby)
+time.sleep(1)
+me.hello()
+time.sleep(2)
+print("О круто,", myname, "- прикольное имя! Да ещё у вас лучшее время! Вам", myage, "лет! Мне бы так...")
+time.sleep(2)
+otvet = input("|||Что ответить? да - согласен с этим или нет - у меня не лучшее время и это не лучшее имя.")
+if otvet == "да" or otvet == "Да":
+    time.sleep(1)
+    print("Ну возможно.")
+    time.sleep(1)
+    print("Ну вот. Ладно, нам надо идти. Пока.")
+elif otvet == "нет" or otvet == "Нет":
+    time.sleep(1)
+    print("Да не, бывало и получше.")
+    time.sleep(1)
+    print("Ну, будь что будет. Нам пора идти. Пока.")
+else:
+    time.sleep(1)
+    print(otvet)
+    time.sleep(1)
+    print("Что?")
+    time.sleep(1)
+    print("Не важно.")
+    time.sleep(1)
+    print("Ладно, нам пора. Пока.")
+time.sleep(2)
+print("|||Вот и закончилась моя встреча")
+time.sleep(3)
+print("-обучение завершено-")
+time.sleep(3)
+print("-уровень 1 - контрольная работа-")
+time.sleep(2)
+print("Класс, у нас сегодня контрольная работа.")
+time.sleep(2)
+print("Она состоит из 10 вопросов.")
+time.sleep(1)
+print("Критерии оценивания: тройка - 4 правильных ответа, четвёрка - 7 правильных ответов, пятёрка - 9 правильных ответов")
+class Question:
+    def __init__(self, q, a):
+        self.question = q
+        self.answer = a
+
+q = []
+q.append(Question("Реши задачу: летело 2 попугая: один зелёный, другой на север. Сколько килограмм сушёных яблок получится, если отвинтить гайку от паровоза? (пошли меня нафиг)", "пошёл нафиг"))
+print(q[0].question)
+q.append(Question("1000-7", "993"))
+print(q[1].question)
+q.append(Question("Какую оценку хочешь?", "5"))
+print(q[2].question)
+q.append(Question("а?", "б"))
+print(q[3].question)
+q.append(Question("Сколько букв в английском алфавите?", "24"))
+print(q[4].question)
+q.append(Question("У этих вопросов есть логика?", "нет"))
+print(q[5].question)
+q.append(Question("Красный, оранжевый, жёлтый, зелёный... Какой цвет идёт дальше?", "голубой"))
+print(q[6].question)
+q.append(Question("400-100 )))))", "3 сотни"))
+print(q[7].question)
+q.append(Question("Это последний вопрос?", "нет"))
+print(q[8].question)
+q.append(Question("А это последний вопрос?", "да"))
+print(q[9].question)
