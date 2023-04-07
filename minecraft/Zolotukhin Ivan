@@ -1,0 +1,142 @@
+//   Золотухин Иван
+
+//   Ссылка на папку с миром и кодом в блоках:
+//   https://github.com/GordonNorthcott/kreitivica/tree/main/2022/minecraft1/Zolotukhin%20I
+
+//   Код на JavaScript
+
+player.onChat("10", function () {
+    mobs.teleportToPosition(
+    mobs.target(NEAREST_PLAYER),
+    world(50, 66, 8)
+    )
+    mobs.give(
+    mobs.target(NEAREST_PLAYER),
+    GOLD_BLOCK,
+    64
+    )
+    mobs.give(
+    mobs.target(NEAREST_PLAYER),
+    GOLD_BLOCK,
+    64
+    )
+    mobs.give(
+    mobs.target(NEAREST_PLAYER),
+    GOLD_BLOCK,
+    64
+    )
+})
+blocks.onBlockBroken(GOLD_BLOCK, function () {
+    player.say("ЗАГАДКА:какая команда очищает инвентарь")
+})
+player.onChat("монстер3", function () {
+    mobs.spawn(mobs.monster(PIG_ZOMBIE), world(68, 155, 207))
+    mobs.spawn(mobs.monster(CAVE_SPIDER), world(68, 155, 207))
+    mobs.spawn(mobs.monster(PHANTOM), world(68, 155, 207))
+    _3 = 0
+})
+blocks.onBlockBroken(SPONGE, function () {
+    КАКИШ += 1
+})
+mobs.onMobKilled(mobs.monster(SKELETON), function () {
+    _2 += 1
+})
+mobs.onMobKilled(mobs.monster(PHANTOM), function () {
+    _3 += 1
+})
+player.onChat("абоба", function () {
+    mobs.spawn(mobs.monster(ZOMBIE), world(278, 153, 207))
+})
+player.onChat("монстер2", function () {
+    mobs.spawn(mobs.monster(SKELETON), world(68, 152, 207))
+    mobs.spawn(mobs.monster(SPIDER), world(68, 152, 207))
+    _2 = 0
+})
+player.onChat("монстер1", function () {
+    mobs.spawn(mobs.monster(ZOMBIE), world(68, 149, 207))
+})
+mobs.onMobKilled(mobs.monster(ZOMBIE), function () {
+    mobs.give(
+    mobs.target(NEAREST_PLAYER),
+    WOODEN_SWORD,
+    1
+    )
+    mobs.give(
+    mobs.target(NEAREST_PLAYER),
+    WOODEN_PICKAXE,
+    1
+    )
+})
+blocks.onBlockBroken(TNT, function () {
+    КАКИШ += 1
+})
+player.onChat("срегин", function () {
+    mobs.teleportToPosition(
+    mobs.target(NEAREST_PLAYER),
+    world(37, 141, 206)
+    )
+})
+mobs.onMobKilled(mobs.monster(PIG_ZOMBIE), function () {
+    _3 += 1
+})
+loops.forever(function () {
+    if (_3 == 3) {
+        mobs.give(
+        mobs.target(NEAREST_PLAYER),
+        IRON_PICKAXE,
+        1
+        )
+        mobs.give(
+        mobs.target(NEAREST_PLAYER),
+        IRON_SWORD,
+        1
+        )
+        _3 = 0
+    }
+})
+loops.forever(function () {
+    if (_2 == 2) {
+        mobs.give(
+        mobs.target(NEAREST_PLAYER),
+        STONE_SWORD,
+        1
+        )
+        mobs.give(
+        mobs.target(NEAREST_PLAYER),
+        STONE_PICKAXE,
+        1
+        )
+        _2 = 0
+    }
+})
+loops.forever(function () {
+    if (КАКИШ == 3) {
+        gameplay.title(mobs.target(NEAREST_PLAYER), "АБАМА", "ТЕПЕРЬ У ТЕБЯ ИСПЫТАНИЕ ПРИМЕР АБАМЫ")
+        mobs.teleportToPosition(
+        mobs.target(NEAREST_PLAYER),
+        world(96, 67, 35)
+        )
+        КАКИШ = 0
+    }
+})
+player.onChat("кака", function () {
+    blocks.fill(
+    ICE,
+    world(278, 99, 170),
+    world(310, 128, 200),
+    FillOperation.Hollow
+    )
+})
+mobs.onMobKilled(mobs.monster(SPIDER), function () {
+    _2 += 1
+})
+blocks.onBlockBroken(SLIME_BLOCK, function () {
+    КАКИШ += 1
+})
+mobs.onMobKilled(mobs.monster(CAVE_SPIDER), function () {
+    _3 += 1
+})
+let КАКИШ = 0
+let _3 = 0
+let _2 = 0
+КАКИШ = 0

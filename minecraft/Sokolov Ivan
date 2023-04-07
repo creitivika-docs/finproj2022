@@ -1,0 +1,71 @@
+//   Соколов Иван
+
+//   Ссылка на папку с миром и кодом в блоках:
+//   https://github.com/GordonNorthcott/kreitivica/tree/main/2022/minecraft1/Sokolov%20I
+
+//   Код на JavaScript:
+
+player.onChat("готово", function () {
+    gameplay.title(mobs.target(LOCAL_PLAYER), "ты спас автора", "продолжение следует в 2023 году")
+})
+player.onChat("е", function () {
+    for (let index = 0; index < 15; index++) {
+        mobs.spawn(mobs.monster(VEX), pos(0, 0, 0))
+    }
+})
+player.onChat("о", function () {
+    for (let index = 0; index < 55; index++) {
+        mobs.spawn(mobs.monster(EVOKER), pos(0, 0, 0))
+    }
+})
+player.onChat("и", function () {
+    player.teleport(world(-313, -13, -623))
+})
+player.onChat("р", function () {
+    for (let index = 0; index < 55; index++) {
+        mobs.spawn(mobs.monster(ZOMBIE), pos(0, 0, 0))
+    }
+})
+player.onChat("с", function () {
+    for (let index = 0; index < 55; index++) {
+        mobs.spawn(mobs.monster(VINDICATOR), pos(0, 0, 0))
+    }
+})
+player.onChat("к", function () {
+    gameplay.title(mobs.target(NEAREST_PLAYER), "коианды", "м и з")
+})
+player.onChat("kk", function () {
+    blocks.fill(
+    PLANKS_OAK,
+    pos(10, 10, 10),
+    pos(-10, -1, -10),
+    FillOperation.Hollow
+    )
+    blocks.fill(
+    LOG_JUNGLE,
+    pos(10, 20, 10),
+    pos(-10, 10, -10),
+    FillOperation.Hollow
+    )
+    blocks.fill(
+    LAPIS_ORE,
+    pos(10, 30, 10),
+    pos(-10, 20, -10),
+    FillOperation.Hollow
+    )
+    blocks.fill(
+    GOLD_BLOCK,
+    pos(10, 40, 10),
+    pos(-10, 30, -10),
+    FillOperation.Hollow
+    )
+})
+player.onChat("м", function () {
+    player.teleport(world(-284, 5, -671))
+})
+player.onChat("з", function () {
+    gameplay.setGameMode(
+    SURVIVAL,
+    mobs.target(LOCAL_PLAYER)
+    )
+})

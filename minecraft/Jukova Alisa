@@ -1,0 +1,120 @@
+//   Жукова Алиса
+
+//   Ссылка на папку с миром и кодами в блоках:
+//   https://github.com/GordonNorthcott/kreitivica/tree/main/2022/minecraft1/Jukova%20A
+
+//   Код на JavaScript 1 часть:
+
+player.onChat("б", function () {
+    blocks.fill(
+    AIR,
+    world(45, 8, -20),
+    world(55, 10, -11),
+    FillOperation.Replace
+    )
+})
+player.onChat("Якот", function () {
+    player.teleport(agent.getPosition())
+})
+player.onChat("а", function () {
+    blocks.fill(
+    AIR,
+    world(7, 3, -17),
+    world(24, 10, -14),
+    FillOperation.Replace
+    )
+})
+mobs.onMobKilled(mobs.monster(ZOMBIE), function () {
+    Зомби += 1
+})
+player.onChat(".", function () {
+    blocks.fill(
+    BLACK_CONCRETE,
+    world(44, 10, -21),
+    world(56, 10, -10),
+    FillOperation.Replace
+    )
+})
+blocks.onBlockBroken(BLACK_CONCRETE, function () {
+    blocks.fill(
+    BLACK_CONCRETE,
+    world(-2, 4, 2),
+    world(-2, 6, -2),
+    FillOperation.Replace
+    )
+    blocks.fill(
+    BLACK_CONCRETE,
+    world(-2, 4, -2),
+    world(2, 6, -2),
+    FillOperation.Replace
+    )
+    blocks.fill(
+    BLACK_CONCRETE,
+    world(2, 4, -2),
+    world(2, 6, 2),
+    FillOperation.Replace
+    )
+    blocks.fill(
+    BLACK_CONCRETE,
+    world(2, 4, 2),
+    world(-2, 6, 2),
+    FillOperation.Replace
+    )
+})
+loops.forever(function () {
+    if (Зомби == 5) {
+        player.teleport(world(57, 9, -15))
+        Зомби = 0
+    }
+})
+player.onChat("л", function () {
+    mobs.give(
+    mobs.target(ALL_PLAYERS),
+    BIRCH_BOAT,
+    19
+    )
+})
+let Зомби = 0
+Зомби = 0
+blocks.fill(
+BLACK_CONCRETE,
+world(-2, 4, -22),
+world(80, 10, -22),
+FillOperation.Replace
+)
+blocks.fill(
+BLACK_CONCRETE,
+world(-2, 3, -8),
+world(80, 3, -22),
+FillOperation.Replace
+)
+
+
+//   Код на JavaScript 2 часть:
+
+player.onItemInteracted(WOODEN_PRESSURE_PLATE, function () {
+    gameplay.title(mobs.target(LOCAL_PLAYER), "Ты слуга", "Ты должен работать на Хозяина")
+    mobs.give(
+    mobs.target(NEAREST_PLAYER),
+    LEATHER_BOOTS,
+    1
+    )
+    mobs.give(
+    mobs.target(NEAREST_PLAYER),
+    WOODEN_HOE,
+    1
+    )
+})
+player.onItemInteracted(ACACIA_PRESSURE_PLATE, function () {
+    gameplay.title(mobs.target(LOCAL_PLAYER), "Ты хозяин", "Ты главный. Просто живи")
+    mobs.give(
+    mobs.target(NEAREST_PLAYER),
+    DIAMOND_HELMET,
+    1
+    )
+    mobs.give(
+    mobs.target(NEAREST_PLAYER),
+    DIAMOND_SWORD,
+    1
+    )
+})

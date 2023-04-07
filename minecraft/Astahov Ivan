@@ -1,0 +1,86 @@
+//  Астахов Иван
+
+//   Ссылка на папку с миром и проектом в блоках:
+//   https://github.com/GordonNorthcott/kreitivica/tree/main/2022/minecraft1/Astahov%20I
+
+//   Код на JavaScript:
+
+let start: Position = null
+let stop: Position = null
+player.onChat("Задать", function () {
+    player.say("Начальная позиция:" + start)
+    blocks.clone(
+    start,
+    stop,
+    pos(0, 0, 0),
+    CloneMask.Replace,
+    CloneMode.Normal
+    )
+})
+player.onChat("Уровень2", function () {
+    player.teleport(world(-462, 4, 1791))
+})
+player.onChat("Конец?", function () {
+    player.teleport(world(-593, 4, 1828))
+    gameplay.title(mobs.target(LOCAL_PLAYER), "В ТУМАНЕ", "Найдите кнопку")
+})
+player.onChat("5205", function () {
+    player.teleport(world(-685, 4, 1859))
+})
+player.onChat("1234", function () {
+    player.teleport(world(-446, 4, 1728))
+})
+player.onChat("stop", function () {
+    stop = player.position()
+    player.say(":)")
+})
+player.onChat("start", function () {
+    start = player.position()
+    player.say(":)")
+})
+loops.forever(function () {
+    if (player.position().getValue(Axis.X) == -483 && player.position().getValue(Axis.Y) == 4 && player.position().getValue(Axis.Z) == 1782) {
+        blocks.fill(
+        AIR,
+        world(-482, 5, 1782),
+        world(-482, 4, 1782),
+        FillOperation.Replace
+        )
+    }
+})
+player.onChat("4562", function () {
+    player.teleport(world(-539, 4, 1813))
+    loops.pause(10000)
+    player.teleport(world(-579, 4, 1778))
+    loops.pause(7000)
+    player.teleport(world(-617, 45, 1757))
+})
+player.onChat("=)", function () {
+    player.teleport(world(-597, 4, 1666))
+})
+player.onChat("Ы", function () {
+    player.teleport(world(-623, 36, 1870))
+    loops.pause(400)
+    player.teleport(world(-623, 36, 1870))
+    loops.pause(400)
+    player.teleport(world(-585, 4, 1871))
+    mobs.spawn(LIGHTNING_BOLT, pos(0, 66, 0))
+    mobs.spawn(LIGHTNING_BOLT, pos(0, 66, 0))
+    mobs.spawn(LIGHTNING_BOLT, pos(0, 66, 0))
+    mobs.spawn(LIGHTNING_BOLT, pos(0, 66, 0))
+    mobs.spawn(LIGHTNING_BOLT, pos(0, 66, 0))
+    loops.pause(20000)
+    mobs.applyEffect(BLINDNESS, mobs.target(NEAREST_PLAYER), 600, 255)
+    mobs.applyEffect(SLOWNESS, mobs.target(NEAREST_PLAYER), 600, 2)
+    player.teleport(world(-538, 4, 1900))
+})
+player.onTravelled(SWIM_LAVA, function () {
+    gameplay.title(mobs.target(ALL_PLAYERS), ";.;'.2.;R3,;5;25,2;35,.',", "? ? ?")
+    player.say("Где я?")
+    player.teleport(world(-446, 4, 1728))
+})
+player.onChat("2134", function () {
+    player.teleport(world(-446, 4, 1728))
+    player.say(">:(")
+    mobs.clearEffect(mobs.target(LOCAL_PLAYER))
+})
